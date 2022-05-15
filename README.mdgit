@@ -1,0 +1,1 @@
+# local-data-pipline initgit add README.mdgit commit -m first commitgit branch -M maingit remote add origin https://github.com/ssro92/local-data-pipline.gitgit push -u origin main

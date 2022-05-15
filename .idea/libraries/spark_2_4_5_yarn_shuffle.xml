@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="spark-2.4.5-yarn-shuffle">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/docker/docker-airflow/spark_files/spark-2.4.5-bin-hadoop2.6/yarn/spark-2.4.5-yarn-shuffle.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

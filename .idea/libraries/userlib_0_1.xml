@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="userlib-0.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/docker/docker-airflow/spark_files/spark-2.4.5-bin-hadoop2.6/python/test_support/userlib-0.1.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
