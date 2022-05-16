@@ -5,7 +5,7 @@
 # BASED ON: https://github.com/puckel/docker-airflow
 
 # stretch debian version allows JAVA JDK 8
-FROM python:3.6-stretch
+FROM python:3.7-stretch
 LABEL maintainer="cordon-thiago"
 
 # Never prompts the user for choices on installation/configuration of packages
@@ -13,7 +13,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV TERM linux
 
 # Airflow
-ARG AIRFLOW_VERSION=1.10.7
+ARG AIRFLOW_VERSION=2.2.3
 ARG AIRFLOW_HOME=/usr/local/airflow
 ARG AIRFLOW_DEPS=""
 ARG PYTHON_DEPS=""
@@ -59,6 +59,7 @@ RUN set -ex \
     && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 \
     && useradd -ms /bin/bash -d ${AIRFLOW_HOME} airflow \
     && pip install -U pip setuptools wheel \
+    && pip install pandas\
     && pip install pytz \
     && pip install pyOpenSSL \
     && pip install ndg-httpsclient \
@@ -88,7 +89,8 @@ RUN set -ex \
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
     apt-get install -y gnupg2 && \
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EB9B1D8886F44E2A && \
+    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 34893610CEAA9512 && \
+    #apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EB9B1D8886F44E2A && \
     add-apt-repository "deb http://security.debian.org/debian-security stretch/updates main" && \
     apt-get update && \
     apt-get install -y openjdk-8-jdk && \

@@ -38,9 +38,10 @@ This project contains the following containers:
 
 ## Setup
 
+
 ### Clone project
 
-    $ git clone https://github.com/cordon-thiago/airflow-spark
+    $ git clone https://github.com/ssro92/local-data-pipline.git
 
 ### Build airflow Docker
 
@@ -51,10 +52,10 @@ Inside the airflow-spark/docker/docker-airflow
 Optionally, you can override the arguments in the build to choose specific Spark, Hadoop and Airflow versions. As an example, here is how to build an image containing Airflow version `1.10.14`, Spark version `2.4.7` and Hadoop version `2.7`.
 
     $ docker build --rm --force-rm \
-    -t docker-airflow-spark:1.10.14_2.4.7 . \
-    --build-arg AIRFLOW_VERSION=1.10.14 \
-    --build-arg SPARK_VERSION=2.4.7 \
-    --build-arg HADOOP_VERSION=2.7
+    -t docker-airflow-spark:2.2.3_3.1.2 . \
+    --build-arg AIRFLOW_VERSION=2.2.3 \
+    --build-arg SPARK_VERSION=3.1.2 \
+    --build-arg HADOOP_VERSION=3.2
 
 Spark and hadoop versions follow the versions as defined at Spark download page: https://spark.apache.org/downloads.html
 
